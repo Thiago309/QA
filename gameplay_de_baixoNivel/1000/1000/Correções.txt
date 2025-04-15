@@ -1,0 +1,3 @@
+        <!-- O maxlength=20 no campo de nome pode ser limitador demais para nomes completos (ex: “Maria das Graças Oliveira Silva”).-->
+
+        <!-- Adicionei minlength e pattern para validar inputs com mais clareza ao usuário e desabilitei o autocomplete para melhor segurança do formulario no campo senha-->
