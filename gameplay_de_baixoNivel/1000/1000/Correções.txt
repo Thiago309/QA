@@ -1,3 +1,5 @@
-        <!-- O maxlength=20 no campo de nome pode ser limitador demais para nomes completos (ex: “Maria das Graças Oliveira Silva”).-->
+* Sugestões após analise do código fonte: *
 
-        <!-- Adicionei minlength e pattern para validar inputs com mais clareza ao usuário e desabilitei o autocomplete para melhor segurança do formulario no campo senha-->
+1 - Aumentar o limite de caracteres para o campo nome, pois pode ser um limitador para nomes completos;
+2 - Adicionar limite minimo de caracteres para o campo senha;
+3 - Desabilitar o autocomplete para melhorar a segurança dos campos.
