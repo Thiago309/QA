@@ -1,0 +1,11 @@
+1 - escolher um campo do código original
+2 - atribuir 3 tratamentos de exceções
+3 - realizar teste unitario de carga nesse campo escolhido.
+
+
+
+
+
+CASOS DE TESTES
+
+1 - É descrever o passo - a - passo de como a automação vai realizar os testes.

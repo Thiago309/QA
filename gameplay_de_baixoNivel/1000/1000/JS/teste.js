@@ -20,5 +20,5 @@ cadastrarBtn.addEventListener("click", function(e){
     form.reset(); 
 
     // Opcional: Caso queira redirecionar o usuário após o envio
-    window.location.href = "file:///C:/Users/wagne/Desktop/1000/index.html";
+    window.location.href = "file:///C:/Users/thiago.vsantos/Documents/GitHub/QA/gameplay_de_baixoNivel/1000/1000/index.html";
 });

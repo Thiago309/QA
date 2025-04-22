@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="validacao.css">
     <script src="JS/teste.js" defer></script>
 
+    <script defer>
+      // Validação para comparar as senhas antes de enviar o formulário
+      document.addEventListener('DOMContentLoaded', function () {
+          const form = document.querySelector('form');
+          const senha = document.getElementById('password');
+          const confirmarSenha = document.getElementById('password_2');
+
+          form.addEventListener('submit', function (e) {
+              if (senha.value !== confirmarSenha.value) {
+                  e.preventDefault(); // Impede o envio do formulário
+                  alert('As senhas digitadas não coincidem. Por favor, verifique.');
+                  confirmarSenha.focus();
+              }
+          });
+      });
+  </script>
+  
     <style>
       body {
           background-image: url('img/back.jpg');
@@ -35,21 +52,23 @@
   <main>
     <form action="/submit_form" method="post" class="form">
         <h1>Cadastre seu usuário</h1>
-     
+     <!---
         <label for="nome">Nome Completo:</label><br>
         <input type="text" id="name" name="nome" placeholder="Digite seu nome completo" required maxlength="20"><br><br>
     
         <label for="username">Usuário:</label><br>
         <input type="text" id="username" name="username" placeholder="Escolha um nome de usuário"required><br><br>
-        
+     -->
+        <!-- Adicionei quantidade minima de caracteres para o campo senha e aumentei a quantidade maxima de caracteres suportado no campo. -->
         <label for="password">Senha:</label><br>
-        <input type="password" id="password" name="password" placeholder="Senha com no máximo 8 dígitos" required maxlength="8"><br><br>
+        <input type="password" id="password" name="password" autocomplete="off" placeholder="Senha de no minimo 8 dígitos" required minlength="8" maxlength="16"><br><br>
 
-        <label for="password">Digite a senha novamente:</label><br>
-        <input type="password" id="password_2" name="password_2" placeholder="Repita a senha" required maxlength="8"><br><br>
+        <!-- Adicionei quantidade minima de caracteres para o campo senha e aumentei a quantidade maxima de caracteres suportado no campo. -->
+        <label for="password_2">Digite a senha novamente:</label><br>
+        <input type="password" id="password_2" name="password_2" autocomplete="off" placeholder="Repita a senha" required minlength="8" maxlength="16"><br><br>
         
           <button type="submit" class="redirect-button" id="cadastrarBtn">Cadastrar</button>
-          <button type="submit" class="redirect-button" formaction="file:///C:/Users/wagne/Desktop/1000/index.html">Cancelar</button>
+          <button type="submit" class="redirect-button" formaction="file:///C:/Users/thiago.vsantos/Documents/GitHub/QA/gameplay_de_baixoNivel/1000/1000/index.html">Cancelar</button>
       </div>
     </form>
   </main>
