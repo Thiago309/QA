@@ -1,78 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título da Página</title>
-    <link rel="stylesheet" href="validacao.css">
-    <script src="JS/teste.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Título da Página</title>
+  <link rel="stylesheet" href="validacao.css" />
 
-    <script defer>
-      // Validação para comparar as senhas antes de enviar o formulário
-      document.addEventListener('DOMContentLoaded', function () {
-          const form = document.querySelector('form');
-          const senha = document.getElementById('password');
-          const confirmarSenha = document.getElementById('password_2');
+  <style>
+    body {
+      background-image: url('img/back.jpg');
+      background-size: 49%;
+      margin-bottom: 290px;
+      background-repeat: no-repeat;
+      background-position: right;
+      font-family: sans-serif;
+    }
 
-          form.addEventListener('submit', function (e) {
-              if (senha.value !== confirmarSenha.value) {
-                  e.preventDefault(); // Impede o envio do formulário
-                  alert('As senhas digitadas não coincidem. Por favor, verifique.');
-                  confirmarSenha.focus();
-              }
-          });
-      });
-  </script>
-  
-    <style>
-      body {
-          background-image: url('img/back.jpg');
-          background-size: 49%;
-          margin-bottom: 290px;
-          background-repeat: no-repeat;
-          background-position: right;
-      }
+    .form {
+      max-width: 400px;
+      margin: 40px;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-visibility {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .password-match {
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    .match {
+      color: green;
+    }
+
+    .mismatch {
+      color: red;
+    }
+
+    .error-message {
+      color: red;
+      margin-bottom: 10px;
+      display: none;
+    }
   </style>
 
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      const senha = document.getElementById('password');
+      const confirmarSenha = document.getElementById('password_2');
+      const errorMessage = document.getElementById('error-message');
+      const matchStatus = document.getElementById('match-status');
+      const toggleButtons = document.querySelectorAll('.toggle-visibility');
+
+      // Mostrar/ocultar senha
+      toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const input = document.getElementById(btn.dataset.target);
+          input.type = input.type === 'password' ? 'text' : 'password';
+          btn.textContent = input.type === 'password' ? '👁️' : '🙈';
+        });
+      });
+
+      // Verificação visual em tempo real
+      confirmarSenha.addEventListener('input', () => {
+        if (confirmarSenha.value === senha.value) {
+          matchStatus.textContent = '✔ As senhas coincidem';
+          matchStatus.className = 'password-match match';
+        } else {
+          matchStatus.textContent = '✖ As senhas não coincidem';
+          matchStatus.className = 'password-match mismatch';
+        }
+      });
+
+      // Validação antes de enviar
+      form.addEventListener('submit', function (e) {
+        if (senha.value !== confirmarSenha.value) {
+          e.preventDefault();
+          errorMessage.style.display = 'block';
+          confirmarSenha.focus();
+        } else {
+          errorMessage.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </head>
 <body>
-
-  <div class="navbar">
-    
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Serviços</a></li>
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#contact">Contato</a></li>
-  </ul>
-    
-</div>
-
- 
   <main>
     <form action="/submit_form" method="post" class="form">
-        <h1>Cadastre seu usuário</h1>
-     <!---
-        <label for="nome">Nome Completo:</label><br>
-        <input type="text" id="name" name="nome" placeholder="Digite seu nome completo" required maxlength="20"><br><br>
-    
-        <label for="username">Usuário:</label><br>
-        <input type="text" id="username" name="username" placeholder="Escolha um nome de usuário"required><br><br>
-     -->
-        <!-- Adicionei quantidade minima de caracteres para o campo senha e aumentei a quantidade maxima de caracteres suportado no campo. -->
-        <label for="password">Senha:</label><br>
-        <input type="password" id="password" name="password" autocomplete="off" placeholder="Senha de no minimo 8 dígitos" required minlength="8" maxlength="16"><br><br>
+      <h1>Cadastre seu usuário</h1>
 
-        <!-- Adicionei quantidade minima de caracteres para o campo senha e aumentei a quantidade maxima de caracteres suportado no campo. -->
-        <label for="password_2">Digite a senha novamente:</label><br>
-        <input type="password" id="password_2" name="password_2" autocomplete="off" placeholder="Repita a senha" required minlength="8" maxlength="16"><br><br>
-        
-          <button type="submit" class="redirect-button" id="cadastrarBtn">Cadastrar</button>
-          <button type="submit" class="redirect-button" formaction="file:///C:/Users/thiago.vsantos/Documents/GitHub/QA/gameplay_de_baixoNivel/1000/1000/index.html">Cancelar</button>
+      <div class="error-message" id="error-message">⚠ As senhas não coincidem. Corrija para continuar.</div>
+
+      <label for="password">Senha:</label><br />
+      <div class="password-container">
+        <input type="password" id="password" name="password" autocomplete="off" placeholder="Senha de no mínimo 8 dígitos" required minlength="8" maxlength="16" />
+        <button type="button" class="toggle-visibility" data-target="password">👁️</button>
       </div>
+      <br />
+
+      <label for="password_2">Digite a senha novamente:</label><br />
+      <div class="password-container">
+        <input type="password" id="password_2" name="password_2" autocomplete="off" placeholder="Repita a senha" required minlength="8" maxlength="16" />
+        <button type="button" class="toggle-visibility" data-target="password_2">👁️</button>
+      </div>
+      <div id="match-status" class="password-match"></div><br />
+
+      <button type="submit" class="redirect-button" id="cadastrarBtn">Cadastrar</button>
+      <button type="submit" class="redirect-button" formaction="file:///C:/Users/thiago.vsantos/Documents/GitHub/QA/gameplay_de_baixoNivel/1000/1000/index.html">Cancelar</button>
     </form>
   </main>
-    <footer>  
-    </footer>
-    </body>
+</body>
 </html>

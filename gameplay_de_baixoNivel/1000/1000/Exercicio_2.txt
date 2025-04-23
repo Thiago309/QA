@@ -1,7 +1,7 @@
 1 - escolher um campo do código original
 2 - atribuir 3 tratamentos de exceções
 3 - realizar teste unitario de carga nesse campo escolhido.
-
+4 - fazer o teste diversas vezes (TESTE de carga.)
 
 
 
