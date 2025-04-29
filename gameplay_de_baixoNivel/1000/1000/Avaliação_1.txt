@@ -1,0 +1,12 @@
+1 - Avaliar se o código é aprovado ou não de forma técnica;
+2 - Pesquisar sobre alguns plus para implementar no projeto;
+3 - Escrever o caso de testes do código.
+
+
+SOBRE O código
+1 - Tem exceções;
+2 - A avaliação tem que ser em cima da chave teste;
+3 - O código vai ser Caixa branca;
+4 - Usabilidade;
+5 - Dica: Começar a automação escrevendo o caso de teste; (Escreva o caso de teste primeiro, para depois codar a automação). Use os comentarios para o caso de testes.
+6 - Precisa capturar log.

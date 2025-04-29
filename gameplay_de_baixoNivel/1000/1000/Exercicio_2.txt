@@ -4,21 +4,29 @@
 4 - fazer o teste diversas vezes (TESTE de carga.)
 
 
-
-
 CASO DE TESTES DA AUTOMAÇÃO
  
-1 - Localiza o caminho do arquivo;
-2 - Inicializa o navegador;
-3 - Maximiliza a aba do navegador;
-4 - Clica nos icones de olhos para mostrar as senhas escritas nos campos;
-5 - Limpa os campos;
-6 - Testa os campos vazios;
-7 - Testa senha com quantidade de caracteres abaixo do minimo requisitado;
-8 - Limpa os campos;
-9 - Testa senhas diferentes;
-10 - Limpa os campos;
-11 - Testa a senha com mais de 16 caracteres;
-12 - Limpa os campos;
-13 - Clica no botão cadastro;
-14 - Fecha a janela.
+1 - Localizar o caminho do arquivo;
+2 - Inicializar o navegador;
+3 - Maximilizar a aba do navegador;
+4 - Clicar no icone de olho 1;
+5 - Selecionar o campo senha 1;
+6 - Escrever nada no campo senha 1;
+7 - Clicar no icone de olho 2;
+8 - Selecionar o campo senha 2;
+9 - Escrever nada no campo senha 2;
+10 - Selecionar o campo senha 1;
+11 - Escrever sen123 no campo senha 1;
+12 - Escrever sen123 no campo senha 2;
+13 - Limpar o campo 1;
+14 - Limpar o campo 2;
+15 - Escrever 123456789 no campo senha 1;
+16 - Escrever 987654321 no campo senha 2;
+17 - Limpar o campo 1;
+18 - Limpar o campo 2;
+19 - Escrever senhalongamasmuitolongamesmo no campo senha 1;
+20 - Escrever senhalongamasmuitolongamesmo no campo senha 2;
+21 - Limpar o campo 1;
+22 - Limpar o campo 2;
+23 - Clica no botão cadastro;
+24 - Fecha a janela.
