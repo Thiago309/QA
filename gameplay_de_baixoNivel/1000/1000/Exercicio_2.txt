@@ -6,6 +6,19 @@
 
 
 
-CASOS DE TESTES
-
-1 - É descrever o passo - a - passo de como a automação vai realizar os testes.
+CASO DE TESTES DA AUTOMAÇÃO
+ 
+1 - Localiza o caminho do arquivo;
+2 - Inicializa o navegador;
+3 - Maximiliza a aba do navegador;
+4 - Clica nos icones de olhos para mostrar as senhas escritas nos campos;
+5 - Limpa os campos;
+6 - Testa os campos vazios;
+7 - Testa senha com quantidade de caracteres abaixo do minimo requisitado;
+8 - Limpa os campos;
+9 - Testa senhas diferentes;
+10 - Limpa os campos;
+11 - Testa a senha com mais de 16 caracteres;
+12 - Limpa os campos;
+13 - Clica no botão cadastro;
+14 - Fecha a janela.
