@@ -1,0 +1,21 @@
+Pré requisito ter instalado 
+
+Git bash
+node.js
+
+1.Criar a pasta do projeto;
+2.Abrir o projeto atrelado a pasta;
+3.Abrir o terminal com o git bash
+3.Inserir o comando:
+ npm init
+4. Inserir o comando: 
+  npm install cypress --save-dev
+5. Inserir o comando:
+ npx cypress open
+6.Escolher E2E
+7.Escolher Chrome
+8.Ir na pasta Cypress no vscode, e seta para baixo;
+9.seta par baixo na pasta E2E
+10.com a aplicação aberta no live server
+11. colocar o número da porta no localhost cy.visit('localhost:5500')
+12. Ir no cypress ver se a aplicação foi rodada
