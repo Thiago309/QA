@@ -4,6 +4,31 @@ function validarEmail() {
     const email = emailInput.value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Campo vazio
+    if (email === '') {
+        emailInput.classList.remove('valid');
+        emailInput.classList.add('invalid');
+        emailAlert.textContent = 'O campo de e-mail não pode estar vazio.';
+        return false;
+    }
+
+    // Começa com caractere inválido
+    if (/^[^a-zA-Z]/.test(email)) {
+        emailInput.classList.remove('valid');
+        emailInput.classList.add('invalid');
+        emailAlert.textContent = 'O e-mail deve começar com uma letra.';
+        return false;
+    }
+
+    // Domínio malformado
+    if (!/@.+\.[a-zA-Z]{2,}$/.test(email)) {
+        emailInput.classList.remove('valid');
+        emailInput.classList.add('invalid');
+        emailAlert.textContent = 'Domínio de e-mail inválido.';
+        return false;
+    }
+
+    // Regex principal
     if (emailRegex.test(email)) {
         emailInput.classList.remove('invalid');
         emailInput.classList.add('valid');
@@ -16,6 +41,7 @@ function validarEmail() {
         return false;
     }
 }
+
 
 function validarSenha() {
     const passwordInput = document.getElementById('password');
