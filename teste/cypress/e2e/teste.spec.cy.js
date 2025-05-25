@@ -30,8 +30,8 @@ describe('Teste de Login - Validações avançadas de e-mail e senha', () => {
   testes.forEach((teste) => {
     it(`Cenário: ${teste.descricao}`, () => {
 
-      cy.get('#email').clear().type(teste.email, { delay: 150 });
-      cy.get('#password').clear().type(teste.senha, { delay: 150 });
+      cy.get('#email').clear().type(teste.email, { delay: 200 });
+      cy.get('#password').clear().type(teste.senha, { delay: 200 });
 
       cy.contains('Entrar').click();
 
